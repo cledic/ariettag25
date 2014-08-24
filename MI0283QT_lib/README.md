@@ -30,7 +30,7 @@ A questo link ho inserito una descrizione dei passi per procedere alla modifica 
 ```
 
 Riporto il codice che uso per dialogare con il dispositivo:
-```
+```C++
 void lcd_cmd(unsigned char reg, unsigned char param)
 {
   int ret;
@@ -118,7 +118,9 @@ Adesso è il caso di vedere il video. Questo è il comando per visualizzare un f
 ./MI0283QT_lcd -n -m ./perla.bin -t 20
 ```
 
-```
+Questa volta ho una immagine fissa in basso allo schermo, ed un video 320x110 in alto. Purtroppo non ho ancora fatto un video, ma si tratta di un esempio di stazione meteo, in cui nella parte alta un filmato riproduce il tempo in atto, e nella parte bassa c'è indicata la temperatura, la pressione, ecc.ecc.
+```bash
+ ./MI0283QT_lcd -n -s ./autunno_screen.rgb -m ./autunno2.bin -l 4 -w 320 -h 110
 ```
 
 [1] www.watterott.com/de/MI0283QT-2-Adapter
