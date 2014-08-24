@@ -29,3 +29,29 @@ e sulla mia AriettaG25 è collegato alla I2C-1
     return 1;
   }
 ```
+
+A questo punto il dispositivo si può <i>leggere e scrivere</i> con questo codice:
+```
+// Writes val to address register on device
+int ADXL345_writeTo( int file, char address, char val)
+{
+char _buff[2];
+_buff[0] = address;
+_buff[1] = val;
+if ( write(file, _buff, 2) != 2)
+return 1;
+return 0;
+}
+// Reads num bytes starting from address register on device in to _buff array
+int ADXL345_readFrom(int file, char address, int num, char buff[])
+{
+char _buff[1];
+_buff[0] = address;
+if ( write(file, _buff, 1) != 1)
+return 1;
+if ( read( file, buff, num) != num)
+return 1;
+return 0;
+}
+```
+
