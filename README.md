@@ -32,6 +32,12 @@ I vari Progetti
 ===============
 Nel repository <b>ariettag25</b> ho inserito alcune progettini che ho fatto con AriettaG25.<br>
 Molte librerie non sono mie, ma ne ho fatto il porting per Arietta da librerie già esistenti e quindi i meriti devono essere attribuiti ai rispettivi creatori.<br>
-Io, quasi sempre, ne ho fatto ilporting dal C++, ed ho inserito il codice per gestire la I2C o la SPI in Linux.<br>
 
+Io, quasi sempre, ne ho fatto il porting dal C++, ed ho inserito il codice per gestire la I2C o la SPI in Linux.<br>
+Si è trattato quindi di costruire le primitive di <i>read</i> e <i>write</i> e di impostare l'apertura del <i>device driver</i>
 
+Il progetto più consistente riguarda un lettore di news da Internet che usa ovviamente AriettaG25 ed un LCD tipo Nokia6110; è sotto il folder <b>ariettaNews</b>. Ho usato molto la libreria ImageMagick per convertire il testo in immagini e per montare immagini scaricate da Internet con altro testo. Lo schermo non è visto come framebuffer ma pilotato come device SPI.
+
+Nelle altre direcotry ci sono programmi che sono prove di collegamento ad alcuni device di cui: un accelerometro ADXL345, un altimetro/barometro BMP180, un LCD 320x240 MI0283QT.
+
+Nella directory <b>weather_station</b> invece c'è un progettino che ho realizzato con Arduino ed una board Terra. Si tratta appunto di una stazione meteo composta da più unità di lettura, realizzate con Arduino il sensore BMP180 e DH11, e la board Terra a ricevere i dati. Come unità di trasmissione e ricezione ho usato i dispositivi RF: nRF24L01 di cui ho fatto il porting di una libreria per la board Terra. 
