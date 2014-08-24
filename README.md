@@ -20,13 +20,18 @@ Non tutte le perifieriche si possono avere <i>disponibili</i>, ma vi assicuro ch
 <li><b>1 SPI</b> (CS0)</li>
 <li><b>2 UART</b></li>
 </ul>
-Provare per credere! [2]
-
-I vari Progetti
-===============
+Non male vero? Provare per credere! [2]
 
 [1] http://acmesystems.it<br>
 [2] http://acmesystems.it/pinout_arietta<br>
 [3] http://www.atmel.com/devices/SAM9G25.aspx<br>
 [4] http://acmesystems.it/arietta_wifi<br>
 [5] http://acmesystems.it/WIFI-2
+
+I vari Progetti
+===============
+Nel repository <b>ariettag25</b> ho inserito alcune progettini che ho fatto con AriettaG25.<br>
+Molte librerie non sono mie, ma ne ho fatto il porting per Arietta da librerie già esistenti e quindi i meriti devono essere attribuiti ai rispettivi creatori.<br>
+Io, quasi sempre, ne ho fatto ilporting dal C++, ed ho inserito il codice per gestire la I2C o la SPI in Linux.<br>
+
+
