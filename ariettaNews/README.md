@@ -1,8 +1,7 @@
 AriettaNews
 ===========
 
-Questo programma visualizza, sullo schermo Nokia6110, in un ciclo continuo, le news dell'ANSA e le indicazioni meteo 
-del sito WeatherChannel. Prima di fare queste due cose, il programma sincronizza il tempo e ottiene il prprio IP con cui esce in Internet da dyndns.org per usarlo nella richiesta meteo a WeatherChannel.
+Questo programma visualizza, su di uno schermo Nokia6110, in un ciclo continuo, le news dell'ANSA e le indicazioni meteodel sito WeatherChannel. Prima di fare queste due cose, il programma sincronizza il tempo e ottiene il proprio IP con cui esce in Internet da dyndns.org per usarlo nella richiesta meteo a WeatherChannel. 
 
 Il testo viene convertito in immagine e l'immagine corrispondete al meteo viene a sua volta montata su di una immagine 130x130 con in calce le indicazioni di temperatura e altre previsioni.
 
@@ -106,5 +105,7 @@ void WriteSpiData(unsigned char data)
 ```
 In questo caso, ho fatto il porting di una libreria già esistente, a cui ho modificato i due comandi principali di scrittura.
 
-Nel foldel "ariettaNews" ci sono una serie di script che leggono le news ANSA e le convertono in immagine, e script che leggono le informazioni meteo da WeatherChannel e le convertono sempre in immagini. Non usate la key, che ho lasciato nei script. E' quella che mi è stata assegnata da WeatherChannel e che potete avere anche voi dopo una breve iscrizione.
+Nel folder "ariettaNews" ci sono una serie di script che leggono le news ANSA e le convertono in immagine, e che leggono le informazioni meteo da WeatherChannel e le convertono sempre in immagini. Non usate la key, che ho lasciato nei script. E' quella che mi è stata assegnata da WeatherChannel e che potete avere anche voi dopo una breve iscrizione.
+
+Il programma per pilotare lo schermo si trova nel folder superiore che si chiama "nokia".
 
