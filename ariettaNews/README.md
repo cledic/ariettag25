@@ -57,3 +57,51 @@ void InitLcd(unsigned char type, const unsigned char* device)
     pabort("can't get speed");
 
 ```
+
+I due comandi principali sono di scrittura di un comando e di scrittura dei dati. 
+Una volta fatti funzionare questi due a 9bit, il gioco è fatto!
+```C++
+void WriteSpiCommand(unsigned char cmd)
+{
+  int ret;
+  uint16_t buff;
+  buff = cmd;
+  
+  struct spi_ioc_transfer tr = {
+    .tx_buf = (unsigned long)&buff,
+    .rx_buf = (unsigned long)NULL,
+    .len = 2,
+    .bits_per_word = 9,
+    .delay_usecs = 0,
+  };
+  
+  ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+  if (ret < 1) {
+    fprintf( stdout, "ERRORE: SpiCmd ioc_message\n");
+    close( fd);	
+  }
+}
+
+void WriteSpiData(unsigned char data)
+{
+  int ret;
+  uint16_t buff;
+  buff = 0x0100 | data;
+  
+  struct spi_ioc_transfer tr = {
+    .tx_buf = (unsigned long)&buff,
+    .rx_buf = (unsigned long)NULL,
+    .len = 2,
+    .bits_per_word = 9,
+    .delay_usecs = 0,
+  };
+  
+  ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+  if (ret < 1) {
+    fprintf( stdout, "ERRORE: SpiData ioc_message\n");
+    close( fd);	
+  }
+}
+
+```
+
