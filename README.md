@@ -1,9 +1,9 @@
-ariettag25
+AriettaG25
 ==========
 
 AriettaG25 è tra le ultime board nate in casa ACMES Systems [1].<br>
-E' una board molto piccola e <b>senza ethernet</b>. Ma in 2,5x5,3 cm si possono avere: un modulo WiFi[4][5] ed una
-strip di 40pin a passo 2,54mm x i GPIO [2].
+E' una board molto piccola e in 2,5x5,3 cm si possono avere: un modulo WiFi[4][5] ed una
+strip di 40pin a passo 2,54mm x i GPIO [2]. 
 
 Il processore è lo stesso della board AriaG25: un Atmel AT91SAM9G25 SoC (ARM9 @ 400Mhz)[3].<br>
 L'I/O riportato sulla strip comprende:<br>
@@ -12,6 +12,8 @@ L'I/O riportato sulla strip comprende:<br>
 <li><b>2 I2C</b></li>
 <li><b>3 SPI</b></li>
 <li><b>3 UART</b></li>
+<li><b>4 PWM</b></li>
+<li><b>4 ADC</b></li>
 </ul>
 <br>
 Non tutte le perifieriche si possono avere <i>disponibili</i>, ma vi assicuro che è possibile avere contemporaneamente:
@@ -36,8 +38,8 @@ Molte librerie non sono mie, ma ne ho fatto il porting per Arietta da librerie g
 Io, quasi sempre, ne ho fatto il porting dal C++, ed ho inserito il codice per gestire la I2C o la SPI in Linux.<br>
 Si è trattato quindi di costruire le primitive di <i>read</i> e <i>write</i> e di impostare l'apertura del <i>device driver</i>
 
-Il progetto più consistente riguarda un lettore di news da Internet che usa ovviamente AriettaG25 ed un LCD tipo Nokia6110; è sotto il folder <b>ariettaNews</b>. Ho usato molto la libreria ImageMagick per convertire il testo in immagini e per montare immagini scaricate da Internet con altro testo. Lo schermo non è visto come framebuffer ma pilotato come device SPI.
+Il progetto più consistente riguarda un lettore di ANSANews e Meteo da Internet che usa ovviamente AriettaG25 ed un LCD tipo Nokia6110; è sotto il folder <b>ariettaNews</b>. Ho usato molto la libreria ImageMagick per convertire il testo in immagini e per montare immagini scaricate da Internet con altro testo. Lo schermo non è visto come framebuffer ma pilotato come device SPI.
 
-Nelle altre direcotry ci sono programmi che sono prove di collegamento ad alcuni device di cui: un accelerometro ADXL345, un altimetro/barometro BMP180, un LCD 320x240 MI0283QT.
+Nelle altre direcotry ci sono programmi che sono prove di collegamento ad alcuni device di cui: un accelerometro ADXL345, un altimetro/barometro BMP180, un LCD 320x240 MI0283QT con alcune esempi di video a 15f/s.
 
 Nella directory <b>weather_station</b> invece c'è un progettino che ho realizzato con Arduino ed una board Terra. Si tratta appunto di una stazione meteo composta da più unità di lettura, realizzate con Arduino il sensore BMP180 e DH11, e la board Terra a ricevere i dati. Come unità di trasmissione e ricezione ho usato i dispositivi RF: nRF24L01 di cui ho fatto il porting di una libreria per la board Terra. 
