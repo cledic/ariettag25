@@ -123,5 +123,5 @@ Questa volta ho una immagine fissa in basso allo schermo, ed un video 320x110 in
  ./MI0283QT_lcd -n -s ./autunno_screen.rgb -m ./autunno2.bin -l 4 -w 320 -h 110
 ```
 
-[1] www.watterott.com/de/MI0283QT-2-Adapter
+[1] www.watterott.com/de/MI0283QT-2-Adapter<br>
 [2] https://code.google.com/p/foxg20-wonderland/wiki/PageName
