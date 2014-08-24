@@ -107,5 +107,7 @@ In questo caso, ho fatto il porting di una libreria già esistente, a cui ho mod
 
 Nel folder "ariettaNews" ci sono una serie di script che leggono le news ANSA e le convertono in immagine, e che leggono le informazioni meteo da WeatherChannel e le convertono sempre in immagini. Non usate la key, che ho lasciato nei script. E' quella che mi è stata assegnata da WeatherChannel e che potete avere anche voi dopo una breve iscrizione.
 
+Tutti i dati vengono letti dai rispettivi siti e scaricati come files in una ramdisk costruita sotto /tmp. In questa maniera cerca di usare il meno possibile la SDCard in scritture ripetitive.
+
 Il programma per pilotare lo schermo si trova nel folder superiore che si chiama "nokia".
 
