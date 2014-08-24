@@ -2,13 +2,12 @@ AriettaNews
 ===========
 
 Questo programma visualizza, sullo schermo Nokia6110, in un ciclo continuo, le news dell'ANSA e le indicazioni meteo 
-del sito WeatherChannel.
+del sito WeatherChannel. Prima di fare queste due cose, il programma sincronizza il tempo e ottiene il prprio IP con cui esce in Internet da dyndns.org per usarlo nella richiesta meteo a WeatherChannel.
 
-Il testo viene convertito in immagine e l'immagine corrispondete al meteo viene anchessa montata su di una immagine 130x130
-con in calce le indicazioni di temperatura e altre previsioni.
+Il testo viene convertito in immagine e l'immagine corrispondete al meteo viene a sua volta montata su di una immagine 130x130 con in calce le indicazioni di temperatura e altre previsioni.
 
-Questo display è pilotato in SPI, usando il device spidev. Ma, ha la prticolarietà di usare una lunghezza di 9bit di frame.
-Il primo bit infatti viene usato per indicare all'LCD se a seguire sono comandi o dati.
+Questo display è pilotato in SPI, usando il device spidev. Ma ha la particolarietà di usare una lunghezza di 9bit di frame.
+Il primo bit infatti viene usato per indicare all'LCD se a seguire sono comandi o dati. Le due funzioni di write sono quindi differenti dal modulo usato per l'MI0283QT.
 
 ```C++
 //
@@ -16,6 +15,7 @@ static int fd;
 static unsigned char bits = 9;
 static unsigned int mode;
 static unsigned int speed = 9*1000*1000;
+static const char *device = "/dev/spidev32766.0";
 
 void InitLcd(unsigned char type, const unsigned char* device)
 {
@@ -104,4 +104,7 @@ void WriteSpiData(unsigned char data)
 }
 
 ```
+In questo caso, ho fatto il porting di una libreria già esistente, a cui ho modificato i due comandi principali di scrittura.
+
+Nel foldel "ariettaNews" ci sono una serie di script che leggono le news ANSA e le convertono in immagine, e script che leggono le informazioni meteo da WeatherChannel e le convertono sempre in immagini. Non usate la key, che ho lasciato nei script. E' quella che mi è stata assegnata da WeatherChannel e che potete avere anche voi dopo una breve iscrizione.
 
