@@ -7,7 +7,7 @@ Inoltre, al file <b>/sys/class/hcsr04/value</b> da cui leggere i dati, ho aggiun
 leggere su quali pin il sensore è configurato.<br>
 
 I parametri sono due:<br>
-<b>insmod hcsr04.ko pecho=<kernel.ID> ptrg=<kernel.ID></b><br>
+<b>insmod hcsr04.ko pecho=[<<kernel.ID>> ptrg=<<kernel.ID>>]</b><br>
 
 In caso non si passi nessun parametro, a default valgono i valori:<br>
 pecho=95 ptrg=91<br>
