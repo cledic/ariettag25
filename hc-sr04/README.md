@@ -12,4 +12,6 @@ I parametri sono due:<br>
 In caso non si passi nessun parametro, a default valgono i valori:<br>
 pecho=95 ptrg=91<br>
 
+Non sono un programmatore di moduli del kernel e per risolvere il problema di avere tre sensori sotto controllo sul mio MarkIII, ho semplicemente creato altri due moduli, chiamandoli <b>est</b> e <b>ovest</b><br>
+
 [1] http://acmesystems.it/HC-SR04
