@@ -14,4 +14,12 @@ pecho=95 ptrg=91<br>
 
 Non sono un programmatore di moduli del kernel e per risolvere il problema di avere tre sensori sotto controllo sul mio MarkIII, ho semplicemente creato altri due moduli, chiamandoli <b>est</b> e <b>ovest</b><br>
 
+Un esempio di utilizzo potrebbe essere:<br>
+<b>insmod hcsr04.ko pecho=25 ptrg=24</b><br>
+<b>insmod hcsr04_est.ko pecho=95 ptrg=91</b><br>
+<b>insmod hcsr04_ovest.ko pecho=27 ptrg=26</b><br>
+
+Per leggere i valori si può usare il programma <b>distance.py</b> da me modificato per visualizzare tutti e tre i sensori<br>.
+
+
 [1] http://acmesystems.it/HC-SR04
