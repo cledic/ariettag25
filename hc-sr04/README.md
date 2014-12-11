@@ -19,7 +19,7 @@ Un esempio di utilizzo potrebbe essere:<br>
 <b>insmod hcsr04_est.ko pecho=95 ptrg=91</b><br>
 <b>insmod hcsr04_ovest.ko pecho=27 ptrg=26</b><br>
 
-Per leggere i valori si può usare il programma <b>distance.py</b> da me modificato per visualizzare tutti e tre i sensori<br>.
+Per leggere i valori si può usare il programma <b>distance.py</b>, modificato per visualizzare tutti e tre i sensori<br>.
 
 
 [1] http://acmesystems.it/HC-SR04
