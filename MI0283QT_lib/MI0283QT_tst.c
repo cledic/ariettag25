@@ -585,8 +585,10 @@ unsigned int lcd_drawRGBimage( const char *filename)
 	
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 	
 	i=1;
 	// Leggo l'intero file convertendo il formato RGB a 8 bit in 565
@@ -657,8 +659,10 @@ unsigned int lcd_drawRGBimageRect( const char *filename, struct RECT rect)
 	buff[0]=LCD_DATA;
 	
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 	
 	i=1;
 	// Leggo l'intero file convertendo il formato RGB a 8 bit in 565
@@ -717,8 +721,10 @@ unsigned int lcd_drawmovieRect( const char *filename, struct RECT rect)
 	unsigned char *buff=(unsigned char*)malloc( (rect.w*rect.h*2)+1);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 	
 	// metto a zero l'intero array
 	memset( buff, 0x00, (rect.w*rect.h*2)+1);
@@ -830,8 +836,10 @@ unsigned int lcd_drawmovieRGBRect( char *filename, struct RECT rect)
 	unsigned char *buff=(unsigned char*)malloc( (rect.w*rect.h*3)+1);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 	
 	while( !feof( f)) {
 		// metto a zero l'intero array
