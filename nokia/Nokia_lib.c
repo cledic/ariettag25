@@ -657,8 +657,10 @@ int LCDWriteFullScreenRGB (const char *filename)
 	memset( buff, 0x00, LCD_WIDTH*LCD_HEIGHT*3);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 
 	fread( &buff[0], 1, LCD_WIDTH*LCD_HEIGHT*3, f);
 	fclose( f);
@@ -706,6 +708,7 @@ int LCDWriteFullScreenRGB (const char *filename)
 	
 	ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
 	if (ret < 1) {
+		free(buff);
 		fprintf( stdout, "ERRORE: LCDWriteFullScreenRGB ioc_message\n");
 		close( fd);	
 	}
@@ -726,8 +729,10 @@ int LCDWriteFullScreenRGB_2 (const char *filename)
 	memset( buff, 0x00, LCD_WIDTH*LCD_HEIGHT*3);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 
 	fread( &buff[0], 1, LCD_WIDTH*LCD_HEIGHT*3, f);
 	fclose( f);
@@ -768,8 +773,10 @@ int LCDWriteRGB (const char *filename)
 	memset( buff, 0x00, LCD_WIDTH*LCD_HEIGHT*3);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 
 	fread( &buff[0], 1, LCD_WIDTH*LCD_HEIGHT*3, f);
 	fclose( f);
@@ -811,8 +818,10 @@ int LCDMovieRGB (const char *filename)
 	memset( buff, 0x00, LCD_WIDTH*LCD_HEIGHT*3);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 
 	WriteSpiCommand(0x2A);  // column
     WriteSpiData (LCD_X_OFFSET);
@@ -854,8 +863,10 @@ int LCDWritebmp (const char *filename, unsigned char x, unsigned char y, unsigne
 	memset( buff, 0x00, ((w*h)/2)*3);
 
 	f=fopen( filename, "rb");
-	if (f==NULL)
+	if (f==NULL) {
+		free(buff);
 		return 1;
+	}
 
 	fread( &buff[0], 1, ((w*h)/2)*3, f);
 	fclose( f);
